@@ -51,7 +51,7 @@ const hash = (pass) =>{
 
 //this process.env.PORT can be any NAME, like process.env.JOX (we just create it)
 // 
-console.log('PORT LISTENING:', process.env.PORT);
+// console.log('PORT LISTENING:', process.env.PORT);
 //execute on cmd and change port: PORT=4050 node server.js
 
 const _PORT = 4000;
@@ -93,6 +93,7 @@ app.put('/image', (req, res) => {
 })
 
 //listenb port
-app.listen(_PORT, () => {
-    console.log(`Listening port ${_PORT}`);
+//read port og heraku env or 3000
+app.listen(process.env.PORT || _PORT, () => {
+    console.log(`Listening port ${process.env.PORT}`);
 })
